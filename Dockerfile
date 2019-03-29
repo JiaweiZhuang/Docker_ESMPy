@@ -5,9 +5,6 @@ ENV PATH /opt/conda/bin:${PATH}
 #RUN conda create -y -n dev-esmf gcc nose esmpy
 RUN conda install -y gcc nose esmpy
 
-# for xESMF development
-RUN conda install -y jupyter scipy xarray dask matplotlib cartopy
-
 #ENV PATH /opt/conda/envs/dev-esmf/bin:${PATH}
 #ENV CONDA_DEFAULT_ENV dev-esmf
 #ENV CONDA_PREFIX /opt/conda/envs/dev-esmf
