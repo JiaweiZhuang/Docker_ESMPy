@@ -44,7 +44,7 @@ WORKDIR $ESMF_DIR/src/addon/ESMPy
 RUN ESMFMKFILE="$(find $ESMF_INSTALL_PREFIX -name '*esmf.mk')" \
     && echo "ESMFMKFILE=$ESMFMKFILE"
 
-RUN source ~/.bashrc \
+RUN . ~/.bashrc \
     && pip install numpy nose \
     && python setup.py build --ESMFMKFILE=${ESMFMKFILE} \
     && python setup.py test \
