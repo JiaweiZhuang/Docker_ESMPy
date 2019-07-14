@@ -1,5 +1,5 @@
 FROM zhuangjw/esmpy_core
 
-# other common libraries
-RUN pip install --no-cache-dir \
-    jupyterlab scipy xarray netcdf4 dask
+# pydata stack
+RUN . /opt/conda/etc/profile.d/conda.sh && conda activate base \
+    && pip install --no-cache-dir jupyterlab scipy xarray netcdf4 dask
