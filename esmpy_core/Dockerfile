@@ -42,9 +42,8 @@ RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -
 # build ESMPy
 WORKDIR $ESMF_DIR/src/addon/ESMPy
 RUN ESMFMKFILE="$(find $ESMF_INSTALL_PREFIX -name '*esmf.mk')" \
-    && echo "ESMFMKFILE=$ESMFMKFILE"
-
-RUN . /opt/conda/etc/profile.d/conda.sh && conda activate base \
+    && echo "ESMFMKFILE=$ESMFMKFILE" \
+    && . /opt/conda/etc/profile.d/conda.sh && conda activate base \
     && pip install numpy nose \
     && python setup.py build --ESMFMKFILE=${ESMFMKFILE} \
     && python setup.py test \
